@@ -2,8 +2,8 @@
 
 This document sets the commercial and legal ground rules for contractor
 engagements: how scope and budget are controlled, what compliance applies to
-international work, how disagreements are resolved, and what happens at the end.
-It supplements the statement of work.
+international work, how disagreements are resolved, what happens at the end, and
+whether the engagement may be transferred. It supplements the statement of work.
 
 ## 1. Scope, Budget, and Change Control
 
@@ -96,3 +96,19 @@ misappropriation is permitted at any stage.
   request.
 - Payment for accepted work remains due after exit; prepaid but undelivered work
   is refunded.
+
+## 5. Assignment
+
+- Neither party may assign or transfer this engagement, in whole or in part,
+  without the other party's prior written consent. An assignment made without
+  that consent is void.
+- Either party may assign the engagement without consent to a successor in a
+  merger, reorganisation, or sale of substantially all of its assets, provided
+  the successor agrees in writing to be bound by these terms and is not a direct
+  competitor of the other party.
+- The assigning party remains responsible for obligations accrued before the
+  assignment and must notify the other party in writing within **10 business
+  days** of any permitted transfer.
+- The contractor may not subcontract an assignment of the engagement;
+  subcontracting remains subject to the flow-down obligations in the contractor
+  agreement.
