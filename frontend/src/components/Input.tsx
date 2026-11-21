@@ -26,6 +26,18 @@ const sizeClasses: Record<InputSize, { wrapper: string; input: string }> = {
   lg: { wrapper: "h-12", input: "text-base px-4" },
 };
 
+// Overrides browser autofill background/text colors so that autofilled fields
+// keep the design's background and remain readable. The large inset box-shadow
+// trick is the cross-browser way to paint over Chromium/WebKit's autofill fill.
+const autofillClasses = clsx(
+  "[&:-webkit-autofill]:[-webkit-box-shadow:0_0_0px_1000px_white_inset]",
+  "[&:-webkit-autofill]:[-webkit-text-fill-color:theme(colors.gray.900)]",
+  "[&:-webkit-autofill]:caret-gray-900",
+  "[&:-webkit-autofill:focus]:[-webkit-box-shadow:0_0_0px_1000px_white_inset]",
+  "[&:-webkit-autofill:hover]:[-webkit-box-shadow:0_0_0px_1000px_white_inset]",
+  "[&:-webkit-autofill:active]:[-webkit-box-shadow:0_0_0px_1000px_white_inset]",
+);
+
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
     {
@@ -81,6 +93,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             className={clsx(
               "flex-1 bg-transparent outline-none placeholder-gray-400",
               "disabled:cursor-not-allowed",
+              autofillClasses,
               input,
               leading && "pl-1.5",
               trailing && "pr-1.5",

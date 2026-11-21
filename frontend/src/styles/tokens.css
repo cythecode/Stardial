@@ -24,4 +24,37 @@
 
   /* Glass Effects */
   --glass-border: rgba(255, 255, 255, 0.08);
+
+  /* Autofill Overrides - keep field text readable and background consistent with the dark surface */
+  --brand-autofill-bg: #171714;
+  --brand-autofill-text: #f9f7f2;
+  --brand-autofill-caret: #f9f7f2;
+}
+
+/*
+ * Browser autofill style overrides.
+ * Chromium/Safari apply a light background and blue-tinted text on autofilled
+ * inputs; the inset box-shadow trick neutralizes the background while keeping
+ * the design tokens applied. transition delay prevents the browser from
+ * repainting the field after load.
+ */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--brand-autofill-bg) inset !important;
+  box-shadow: 0 0 0 1000px var(--brand-autofill-bg) inset !important;
+  -webkit-text-fill-color: var(--brand-autofill-text) !important;
+  caret-color: var(--brand-autofill-caret);
+  transition: background-color 5000s ease-in-out 0s;
+  border-color: var(--brand-border);
+}
+
+input:autofill,
+textarea:autofill,
+select:autofill {
+  color: var(--brand-autofill-text);
+  background-color: var(--brand-autofill-bg);
 }
